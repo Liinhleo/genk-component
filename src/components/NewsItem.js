@@ -1,35 +1,20 @@
-import React, {Component,StyleSheet} from 'react';
-import ImgPoster from "./Birds-of-Prey-2020-Movie-Soundtrack-Trailer.jpg"
-
+import React, {Component} from 'react';
 
 class NewsItem extends Component {
-  constructor() {
-    super();
-    this.state = {
-        content:"",
-    }
-}
-componentDidMount() {
-  this.setState({
-    content: this.props.content,
-  })
-}
   render(){
-      let url = ImgPoster;
-      return (
-        <ul>
+      return (    
+        <div>
+          <h1>{this.props.title}</h1>
           <img 
-          src={url} 
+          src={this.props.image} 
           width="400" 
-          fetchFormat="auto" 
+          fetchFormat="auto"
           crop="scale"/>
-
-          <p> Đây là nội dung hiển thị của báo </p>
-        </ul>
+          <p >{this.props.content}</p>
+        </div>
     );
       
     }
   }
 
-  
   export default NewsItem;
