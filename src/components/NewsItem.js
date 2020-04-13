@@ -7,9 +7,7 @@ class NewsItem extends Component {
           <h1>{this.props.title}</h1>
           <img 
           src={this.props.image} 
-          width="400" 
-          fetchFormat="auto"
-          crop="scale"/>
+          width="400" />
           <p >{this.props.content}</p>
         </div>
     );

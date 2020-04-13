@@ -1,22 +1,25 @@
 import React, {Component} from 'react';
 import './App.css';
 import NewsItem from "./components/NewsItem"
-import ImgPoster from "./components/Birds-of-Prey-2020-Movie-Soundtrack-Trailer.jpg"
-// import data from "./components/data/data.json"
-
+import data from './data.json';
 
 class App extends Component {
-  render(){
-    const data={title: "Tiêu đề 1",image: ImgPoster,content: "Nội dung 1"};
-      return (
-        <div className="App">
-          <NewsItem 
-          title={data.title}
-          image={data.image}
-          content={data.content} />
-        </div>
-      );
+  render() {
+    return (
+      <div className="App">
+        {
+          data.map((item,index) => {
+            return (
+              <NewsItem
+                key = {index}
+                title={item.title}
+                image={item.image}
+                content={item.content} />
+            );
+          })
+        }
+      </div>
+    );
   }
 }
-
 export default App;
